@@ -61,7 +61,7 @@ window.addEventListener("keydown", async (e) => {
       inputPrestataire.value = "DERGHOUM MOHAMED";
       inputCodePrestataire.value = "32/02";
 
-      inputCodeClient.value = data.sinistreODR;
+      inputCodeClient.value = data.policeNumero;
       inputNomClient.value = `${data.clientNom} ${data.clientPrenom}`;
       inputTelClient.value = data.clientTel1;
 
