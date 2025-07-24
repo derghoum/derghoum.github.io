@@ -1,0 +1,215 @@
+@media print {
+  html {
+    filter: grayscale(100%);
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+}
+
+/* General styles for the A4 area */
+.a4-container {
+  position: relative;
+  width: 210mm;
+  height: 297mm;
+
+  background: white;
+  border: 1px solid #a7a7a7;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  box-sizing: border-box;
+  font-family: "Calibri", sans-serif;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Button styles */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.action-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.action-button:hover {
+  background-color: #0056b3;
+}
+
+.text-like-input {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  text-align: start;
+  font-weight: bold;
+
+}
+
+.text-like-input:focus {
+  outline: 1px solid currentColor;
+}
+
+.text-like-input::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+
+/* other styles */
+
+
+.header {
+  margin: 0px;
+  padding: Opx;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 18px;
+}
+
+.header2 {
+  font-weight: bold;
+}
+
+.flexbox {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  gap: 4px;
+}
+
+.typetable {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  outline: 2px solid black;
+  margin-bottom: 10px;
+}
+
+.griditem {
+  outline: 1px solid black;
+  padding: 4px;
+}
+
+
+.border {
+  border: 1px solid black;
+    padding: 4px;
+}
+.outerborder {
+  border: 1px solid black;
+
+}
+
+.signature {
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.signaturediv {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.footer {
+  margin-top: auto;
+  align-items: center;
+  gap: 0;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 15px;
+  height: 15px;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  background: #fff;
+  vertical-align: middle;
+  /* Ensures checkbox aligns with label text */
+}
+
+input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 0px;
+  width: 5px;
+  height: 10px;
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  display: block;
+  box-sizing: border-box;
+}
+
+.input-row {
+  display: flex;
+  align-items: center;
+}
+
+.input-row input {
+  flex: 1;
+}
+
+
+  .twoinputs-row {
+    display: flex;
+    align-items: center;
+
+  }
+
+  .twoinputs-row input {
+
+    box-sizing: border-box;
+  }
+
+  .twoinputs-row #nomclient {
+    flex: 1; /* Flexible width */
+  }
+
+  .twoinputs-row #telclient {
+    width: 140px; /* Fixed width */
+  }
+
+
+  label {
+    margin-right: 5px;
+  }
+
+  .flexrow {
+    display: flex;
+    flex-direction: row;
+    text-wrap: nowrap;
+  }

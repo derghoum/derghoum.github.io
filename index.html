@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>A4 Paper</title>
+  <link rel="stylesheet" href="./A4.css" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+
+<body style="--bleeding: 0.5cm; --margin: 0.5cm">
+  <div class="page">
+    <div class="header">
+      <img class="logo" src="/images/logo.png" style="width: 2cm;height: inherit;">
+      <h1 class="title">Fiche d'intervention BDF</h1>
+    </div>
+    <div class="flexbox prestataire">
+      <div class="header2">Information Prestataire:
+      </div>
+      <div class="input-row">
+        <label for="prestataire">Raison Sociale Prestataire:</label>
+        <input class="text-like-input" type="text" id="prestataire" name="prestataire" />
+      </div>
+      <div class="input-row">
+        <label for="codeprestataire">Code Prestataire:</label>
+        <input class="text-like-input" type="text" id="codeprestataire" name="codeprestataire" />
+      </div>
+
+
+
+    </div>
+    <div class="flexbox client">
+      <div class="header2">Information Client:
+      </div>
+      <div class="input-row">
+        <label for="codeclient">Numéro de police d'assurance:</label>
+        <input class="text-like-input" type="text" id="codeclient" name="codeclient" />
+      </div>
+      <div class="twoinputs-row">
+        <label for="nomclient">Nom du Client:</label>
+        <input class="text-like-input" type="text" id="nomclient" name="nomclient" />
+        <label for="telclient">Téléphone du Client:</label>
+        <input class="text-like-input" type="text" id="telclient" name="telclient" />
+      </div>
+
+    </div>
+    <div class="flexbox vehicule">
+      <div class="header2">Information Véhicule:
+      </div>
+      <div class="input-row">
+        <label for="marque">Type du véhicule:</label>
+        <input class="text-like-input" type="text" id="marque" name="marque" />
+      </div>
+      <div class="input-row">
+        <label for="immatriculation">Immatriculation du véhicule:</label>
+        <input class="text-like-input" type="text" id="immatriculation" name="immatriculation" />
+      </div>
+      <div class="input-row">
+        <label for="vin">VIN du véhicule:</label>
+        <input class="text-like-input" type="text" id="vin" name="vin" />
+      </div>
+
+    </div>
+    <div class="flexbox mission">
+      <div class="header2">Information mission:
+      </div>
+      <div class="input-row">
+        <label for="dossier">Numéro de dossier:</label>
+        <input class="text-like-input" type="text" id="dossier" name="dossier" />
+      </div>
+      <div class="input-row">
+        <label for="date">Date de l'intervention:</label>
+        <input class="text-like-input" type="text" id="date" name="date" />
+      </div>
+      <div class="input-row">
+        <label for="type">Type d'intervention réalisée:</label>
+        <input class="text-like-input" type="text" id="type" name="type" />
+      </div>
+      <div class="typetable">
+        <div class="griditem">
+          <input class="checkboxinput" type="checkbox" id="pb" name="pb">
+          <label for="pb">Pare-brise</label>
+        </div>
+
+        <div class="griditem">
+          <input class="checkboxinput" type="checkbox" id="la" name="la">
+          <label for="la">Lunette arrière</label>
+        </div>
+
+        <div class="griditem">
+          <input class="checkboxinput" type="checkbox" id="vlag" name="vlag">
+          <label for="vlag">Vitre latérale avant gauche</label>
+        </div>
+
+        <div class="griditem">
+          <input class="checkboxinput" type="checkbox" id="vlarg" name="vlarg">
+          <label for="vlarg">Vitre latérale arrière gauche</label>
+        </div>
+
+        <div class="griditem">
+          <input class="checkboxinput" type="checkbox" id="vlad" name="vlad">
+          <label for="vlad">Vitre latérale avant droite</label>
+        </div>
+
+        <div class="griditem">
+          <input class="checkboxinput" type="checkbox" id="vlard" name="vlard">
+          <label for="vlard">Vitre latérale arrière droite</label>
+        </div>
+
+        <div class="griditem">
+          <input class="checkboxinput" type="checkbox" id="defad" name="defad">
+          <label for="defad">Déflecteur avant droite</label>
+        </div>
+
+        <!-- <div class="griditem">
+          <input class="checkboxinput" type="checkbox" id="defag" name="defag">
+          <label for="defag">Déflecteur avant gauche</label>
+        </div> -->
+
+        <div class="griditem">
+          <input class="checkboxinput" type="checkbox" id="defard" name="defard">
+          <label for="defard">Déflecteur arrière droite</label>
+        </div>
+
+        
+        <!-- <div class="griditem">
+          <input class="checkboxinput" type="checkbox" id="defarg" name="defarg">
+          <label for="defarg">Déflecteur arrière gauche</label>
+        </div> -->
+
+        <div class="griditem">
+          <input class="checkboxinput" type="checkbox" id="custad" name="custad">
+          <label for="custad">Custode avant droite</label>
+        </div>
+
+        <div class="griditem">
+          <input class="checkboxinput" type="checkbox" id="custag" name="custag">
+          <label for="custag">Custode avant gauche</label>
+        </div>
+
+        <div class="griditem">
+          <input class="checkboxinput" type="checkbox" id="custard" name="custard">
+          <label for="custard">Custode arriére droite</label>
+        </div>
+
+        <div class="griditem">
+          <input class="checkboxinput" type="checkbox" id="custarg" name="custarg">
+          <label for="custarg">Custode arriére gauche</label>
+        </div>
+
+      </div>
+      <div class="time outerborder">
+        <div class="border input-row">
+          <label for="heuredebut">Heure début d'intervention:</label>
+          <input class="text-like-input" type="text" id="heuredebut" name="heuredebut" />
+        </div>
+        <div class="border input-row">
+          <label for="heurefin">Heure fin d'intervention:</label>
+          <input class="text-like-input" type="text" id="heurefin" name="heurefin" />
+        </div>
+      </div>
+    </div>
+    <div class="flexbox attestation">
+      <div class="flexrow">
+        <div>Je Soussigne</div><input class="text-like-input" type="text" id="mr" name="mr" style="width: 180px; margin-left: 5px; margin-right: 5px; text-align: center;
+" />
+        <div>atteste avoir procéder au remplacement conforme de la vitre:</div>
+      </div>
+      <div class="outerborder">
+        <div class="border input-row">
+          <label for="marqueold">Marque:</label>
+          <input class="text-like-input" type="text" id="marqueold" name="marqueold" />
+        </div>
+        <div class="border input-row">
+          <label for="snold">Numéro de série:</label>
+          <input class="text-like-input" type="text" id="snold" name="snold" />
+        </div>
+      </div>
+      <div>Vitre remplacée:</div>
+      <div class="outerborder">
+        <div class="border input-row">
+          <label for="marquenew">Marque:</label>
+          <input class="text-like-input" type="text" id="marquenew" name="marquenew" />
+        </div>
+        <div class="border input-row">
+          <label for="snnew">Numéro de série:</label>
+          <input class="text-like-input" type="text" id="snnew" name="snnew" />
+        </div>
+      </div>
+    </div>
+    <div class="flexbox signature">
+      <div class="signaturediv">Le Prestataire:</div>
+      <div class="signaturediv">Le Client:</div>
+    </div>
+    <div class="flexbox footer">
+      <div>inter Partner Assistance Algérie</div>
+      <div>76, Boulevard Krim belkacem - Alger</div>
+      <div>Tél: +213 21 98 00 00 - Fax: +213 21 98 00</div>
+    </div>
+  </div>
+  </div>
+  </div>
+</body>
+
+</html>
