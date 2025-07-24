@@ -1,6 +1,7 @@
 
 const TESTURL = "http://127.0.0.1:5501";
 const SOURCEURL = "https://digital.ipassistance-dz.com";
+
 // Prestataire
 const inputPrestataire = document.getElementById("prestataire");
 const inputCodePrestataire = document.getElementById("codeprestataire");
@@ -81,7 +82,7 @@ window.addEventListener(
 );
 
 window.addEventListener("load", (event) => {
-  window.opener.postMessage("ready!", TESTURL);
+  //window.opener.postMessage("ready!", TESTURL);
   window.opener.postMessage("ready!", SOURCEURL);
   console.log("ready sent!");
 });
