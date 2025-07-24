@@ -1,7 +1,3 @@
-
-const TESTURL = "http://127.0.0.1:5501";
-const SOURCEURL = "https://digital.ipassistance-dz.com";
-
 // Prestataire
 const inputPrestataire = document.getElementById("prestataire");
 const inputCodePrestataire = document.getElementById("codeprestataire");
@@ -50,106 +46,41 @@ const inputMarqueNew = document.getElementById("marquenew");
 const inputSnNew = document.getElementById("snnew");
 
 
-// window.addEventListener(
-//   "message",
-//   (event) => {
-//     const data = event.data;
-//     console.log(data)
-//     document.title = `Fiche d'intervention BDG - ${data.clientNom} ${data.clientPrenom}`;
-//     //////////////////////////////
-//     inputPrestataire.value = "DERGHOUM MOHAMED";
-//     inputCodePrestataire.value = "32/02";
-//     //////////////////////////////
-//     inputCodeClient.value = data.sinistreODR;
-//     inputNomClient.value = `${data.clientNom} ${data.clientPrenom}`;
-//     inputTelClient.value = data.clientTel1;
-//     //////////////////////////////
-//     inputMarque.value = `${data.vehiculeMarque} ${data.vehiculeModele}`
-//     inputImmatriculation.value = data.vehiculeImmatriculation;
-//     //////////////////////////////
-//     inputDossier.value = data.dossierSuivi;
-//     inputDate.value = data.rdvDateTime;
-//     //document.getElementById(data.glassType).checked = true;
-//     //////////////////////////////////
-//     // inputMr.value = `${data.clientNom} ${data.clientPrenom}`;
-//     inputMarqueOld.value = data.old;
-//     inputMarqueNew.value = data.new;
+window.addEventListener("keydown", async (e) => {
+  if (e.ctrlKey && e.key === "f") {
+    e.preventDefault();
 
-//     //////////////////////////////
-//     console.log("Received data:", data);
-//     //window.print();
-//   },
-//   { once: true }
-// );
+    try {
+      const clipboardText = await navigator.clipboard.readText();
+      const data = JSON.parse(clipboardText); // Ensure it's valid JSON
 
-// window.addEventListener("load", (event) => {
-//   //window.opener.postMessage("ready!", TESTURL);
-//   console.log(window.opener)
-//   window.opener.postMessage("ready!", SOURCEURL);
-//   console.log("ready sent!");
-// });
+      console.log("Parsed from clipboard:", data);
 
+      document.title = `Fiche d'intervention BDG - ${data.clientNom} ${data.clientPrenom}`;
 
-function parseRSS(xmlString) {
-    const parser = new DOMParser();
-    const xmlDoc = parser.parseFromString(xmlString, "application/xml");
+      inputPrestataire.value = "DERGHOUM MOHAMED";
+      inputCodePrestataire.value = "32/02";
 
-    const channel = xmlDoc.querySelector("channel");
-    const items = channel.querySelectorAll("item");
+      inputCodeClient.value = data.sinistreODR;
+      inputNomClient.value = `${data.clientNom} ${data.clientPrenom}`;
+      inputTelClient.value = data.clientTel1;
 
-    const parsedData = Array.from(items).map(item => {
-        const title = item.querySelector("title")?.textContent.trim() || "";
-        const link = item.querySelector("link")?.textContent.trim() || "";
-        const project = item.querySelector("project")?.textContent.trim() || "";
-        const summary = item.querySelector("summary")?.textContent.trim() || "";
-        const assignee = item.querySelector("assignee")?.textContent.trim() || "";
-        const reporter = item.querySelector("reporter")?.textContent.trim() || "";
-        const created = item.querySelector("created")?.textContent.trim() || "";
-        const updated = item.querySelector("updated")?.textContent.trim() || "";
-        
-        // Extracting custom fields
-        const customFields = Array.from(item.querySelectorAll("customfield")).map(field => {
-            const fieldName = field.querySelector("customfieldname")?.textContent.trim() || "";
-            const fieldValue = field.querySelector("customfieldvalues customfieldvalue")?.textContent.trim() || "";
-            return { fieldName, fieldValue };
-        });
+      inputMarque.value = `${data.vehiculeMarque} ${data.vehiculeModele}`;
+      inputImmatriculation.value = data.vehiculeImmatriculation;
 
-        return {
-            title,
-            link,
-            project,
-            summary,
-            assignee,
-            reporter,
-            created,
-            updated,
-            customFields
-        };
-    });
+      inputDossier.value = data.dossierSuivi;
+      inputDate.value = data.rdvDateTime;
 
-    return parsedData;
-}
+      // document.getElementById(data.glassType).checked = true;
 
-async function fetchXMLString(url) {
-  try {
-    const response = await fetch(url, {
-      method: 'GET',
-      headers: {
-        'Accept': 'application/rss+xml, application/xml, text/xml'
-      }
-    });
+      inputMarqueOld.value = data.old;
+      inputMarqueNew.value = data.new;
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+    } catch (err) {
+      console.error("Clipboard read or JSON parse failed:", err);
     }
-
-    const xmlString = await response.text();
-    return xmlString;
-  } catch (error) {
-    console.error("Failed to fetch XML:", error);
-    return null;
   }
-}
+});
 
 
-fetchXMLString("https://digital.ipassistance-dz.com/si/jira.issueviews:issue-xml/CNMA-161555/CNMA-161555.xml")
+
