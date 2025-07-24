@@ -47,7 +47,7 @@ const inputSnNew = document.getElementById("snnew");
 
 
 window.addEventListener("keydown", async (e) => {
-  if (e.ctrlKey && e.key === "f") {
+  if (e.ctrlKey && e.key.toLowerCase() === "f") {
     e.preventDefault();
 
     try {
