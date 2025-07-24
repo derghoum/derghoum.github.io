@@ -152,5 +152,4 @@ async function fetchXMLString(url) {
 }
 
 
-const xmlstr = await fetchXMLString("https://digital.ipassistance-dz.com/si/jira.issueviews:issue-xml/CNMA-161555/CNMA-161555.xml")
-console.log(parseRSS(xmlstr))
+fetchXMLString("https://digital.ipassistance-dz.com/si/jira.issueviews:issue-xml/CNMA-161555/CNMA-161555.xml")
