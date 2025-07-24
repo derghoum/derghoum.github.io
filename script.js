@@ -71,7 +71,7 @@ window.addEventListener("keydown", async (e) => {
       inputDossier.value = data.dossierSuivi;
       inputDate.value = data.rdvDateTime;
 
-      // document.getElementById(data.glassType).checked = true;
+      document.getElementById(data.glassType).checked = true;
 
       inputMarqueOld.value = data.old;
       inputMarqueNew.value = data.new;
