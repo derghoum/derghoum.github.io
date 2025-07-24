@@ -83,6 +83,7 @@ window.addEventListener(
 
 window.addEventListener("load", (event) => {
   //window.opener.postMessage("ready!", TESTURL);
+  console.log(window.opener)
   window.opener.postMessage("ready!", SOURCEURL);
   console.log("ready sent!");
 });
