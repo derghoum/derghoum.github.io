@@ -54,6 +54,7 @@ window.addEventListener(
   "message",
   (event) => {
     const data = event.data;
+    console.log(data)
     document.title = `Fiche d'intervention BDG - ${data.clientNom} ${data.clientPrenom}`;
     //////////////////////////////
     inputPrestataire.value = "DERGHOUM MOHAMED";
@@ -81,9 +82,9 @@ window.addEventListener(
   { once: true }
 );
 
-window.addEventListener("load", (event) => {
-  //window.opener.postMessage("ready!", TESTURL);
-  console.log(window.opener)
-  window.opener.postMessage("ready!", SOURCEURL);
-  console.log("ready sent!");
-});
+// window.addEventListener("load", (event) => {
+//   //window.opener.postMessage("ready!", TESTURL);
+//   console.log(window.opener)
+//   window.opener.postMessage("ready!", SOURCEURL);
+//   console.log("ready sent!");
+// });
