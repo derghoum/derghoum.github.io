@@ -69,7 +69,7 @@ window.addEventListener(
     //////////////////////////////
     inputDossier.value = data.dossierSuivi;
     inputDate.value = data.rdvDateTime;
-    document.getElementById(data.glassType).checked = true;
+    //document.getElementById(data.glassType).checked = true;
     //////////////////////////////////
     // inputMr.value = `${data.clientNom} ${data.clientPrenom}`;
     inputMarqueOld.value = data.old;
@@ -82,9 +82,9 @@ window.addEventListener(
   { once: true }
 );
 
-// window.addEventListener("load", (event) => {
-//   //window.opener.postMessage("ready!", TESTURL);
-//   console.log(window.opener)
-//   window.opener.postMessage("ready!", SOURCEURL);
-//   console.log("ready sent!");
-// });
+window.addEventListener("load", (event) => {
+  //window.opener.postMessage("ready!", TESTURL);
+  console.log(window.opener)
+  window.opener.postMessage("ready!", SOURCEURL);
+  console.log("ready sent!");
+});
