@@ -9,13 +9,45 @@
   <link rel="stylesheet" href="./A4.css" />
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
+  <script src="controls.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.11/dist/html-to-image.min.js"></script>
+
 </head>
 
 <body style="--bleeding: 0.5cm; --margin: 0.5cm">
+
+  <div class="controls">
+    <!-- Fill from Clipboard Button -->
+    <button id="fillClipboard" class="control-button clipboard-button">
+      <img src="images/clipboard.svg" alt="Clipboard Icon" class="button-icon">
+      Fill from Clipboard
+    </button>
+
+    <!-- Fill from XML Button -->
+    <button id="fillFromXml" class="control-button xml-button">
+      <img src="images/xml.svg" alt="XML Icon" class="button-icon">
+      Fill from XML
+    </button>
+    <input type="file" id="xmlFileInput" accept=".xml" style="display: none;">
+
+    <!-- Save as Image Button -->
+    <button id="saveAsImage" class="control-button image-button">
+      <img src="images/save.svg" alt="Download Icon" class="button-icon">
+      Save as Image
+    </button>
+
+    <!-- Print Document Button -->
+    <button id="printPage" class="control-button print-button">
+      <img src="images/print.svg" alt="Print Icon" class="button-icon">
+      Print Document
+    </button>
+  </div>
+
+  </div>
   <div class="page">
     <div class="header">
       <img class="logo" src="/images/logo.png" style="width: 2cm;height: inherit;">
-      <h1 class="title">Fiche d'intervention BDF</h1>
+      <h1 class="title">Fiche d'intervention BDG</h1>
     </div>
     <div class="flexbox prestataire">
       <div class="header2">Information Prestataire:
@@ -81,73 +113,73 @@
       </div>
       <div class="typetable">
         <div class="griditem">
-          <input class="checkboxinput" type="checkbox" id="pb" name="pb">
+          <input class="checkboxinput" type="checkbox" id="pb" >
           <label for="pb">Pare-brise</label>
         </div>
 
         <div class="griditem">
-          <input class="checkboxinput" type="checkbox" id="la" name="la">
+          <input class="checkboxinput" type="checkbox" id="la" >
           <label for="la">Lunette arrière</label>
         </div>
 
         <div class="griditem">
-          <input class="checkboxinput" type="checkbox" id="vlag" name="vlag">
+          <input class="checkboxinput" type="checkbox" id="vlag" >
           <label for="vlag">Vitre latérale avant gauche</label>
         </div>
 
         <div class="griditem">
-          <input class="checkboxinput" type="checkbox" id="vlarg" name="vlarg">
+          <input class="checkboxinput" type="checkbox" id="vlarg" >
           <label for="vlarg">Vitre latérale arrière gauche</label>
         </div>
 
         <div class="griditem">
-          <input class="checkboxinput" type="checkbox" id="vlad" name="vlad">
+          <input class="checkboxinput" type="checkbox" id="vlad" >
           <label for="vlad">Vitre latérale avant droite</label>
         </div>
 
         <div class="griditem">
-          <input class="checkboxinput" type="checkbox" id="vlard" name="vlard">
+          <input class="checkboxinput" type="checkbox" id="vlard" >
           <label for="vlard">Vitre latérale arrière droite</label>
         </div>
 
         <div class="griditem">
-          <input class="checkboxinput" type="checkbox" id="defad" name="defad">
+          <input class="checkboxinput" type="checkbox" id="defad" >
           <label for="defad">Déflecteur avant droite</label>
         </div>
 
         <!-- <div class="griditem">
-          <input class="checkboxinput" type="checkbox" id="defag" name="defag">
+          <input class="checkboxinput" type="checkbox" id="defag" >
           <label for="defag">Déflecteur avant gauche</label>
         </div> -->
 
         <div class="griditem">
-          <input class="checkboxinput" type="checkbox" id="defard" name="defard">
+          <input class="checkboxinput" type="checkbox" id="defard" >
           <label for="defard">Déflecteur arrière droite</label>
         </div>
 
-        
+
         <!-- <div class="griditem">
-          <input class="checkboxinput" type="checkbox" id="defarg" name="defarg">
+          <input class="checkboxinput" type="checkbox" id="defarg" >
           <label for="defarg">Déflecteur arrière gauche</label>
         </div> -->
 
         <div class="griditem">
-          <input class="checkboxinput" type="checkbox" id="custad" name="custad">
+          <input class="checkboxinput" type="checkbox" id="custad" >
           <label for="custad">Custode avant droite</label>
         </div>
 
         <div class="griditem">
-          <input class="checkboxinput" type="checkbox" id="custag" name="custag">
+          <input class="checkboxinput" type="checkbox" id="custag" >
           <label for="custag">Custode avant gauche</label>
         </div>
 
         <div class="griditem">
-          <input class="checkboxinput" type="checkbox" id="custard" name="custard">
+          <input class="checkboxinput" type="checkbox" id="custard" >
           <label for="custard">Custode arriére droite</label>
         </div>
 
         <div class="griditem">
-          <input class="checkboxinput" type="checkbox" id="custarg" name="custarg">
+          <input class="checkboxinput" type="checkbox" id="custarg">
           <label for="custarg">Custode arriére gauche</label>
         </div>
 
