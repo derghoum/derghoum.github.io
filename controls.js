@@ -149,6 +149,7 @@ saveAsImageButton.addEventListener("click", () => {
 // Copy to Clipboard with Feedback
 copyInput.addEventListener("click", async () => {
   try {
+    if (copyInput.value === "") return;
     await navigator.clipboard.writeText(copyInput.value);
 
     // Add feedback styles
