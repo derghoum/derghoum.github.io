@@ -238,6 +238,7 @@ label {
 /* --- Styles for controls div and buttons --- */
 .controls {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   padding: 16px;
@@ -246,7 +247,45 @@ label {
   box-shadow: 0 2px 8px 0 rgba(30, 41, 59, 0.06);
   margin: 16px auto;
   gap: 16px;
-  max-width: fit-content;
+
+  position: relative; /* so the tooltip is positioned relative to this */
+}
+
+.controls input[type="text"] {
+  flex-basis: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  font-size: 16px;
+  margin-top: 8px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.controls input.copied {
+  border-color: #4caf50;
+  box-shadow: 0 0 8px #4caf50;
+}
+
+/* Tooltip styles */
+.copy-feedback {
+  position: absolute;
+  bottom: calc(100% - 50px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #4caf50;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-size: 14px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+/* Show + animate the tooltip */
+.copy-feedback.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-8px);
 }
 
 .control-button {

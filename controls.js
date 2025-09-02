@@ -2,6 +2,9 @@ const fillClipboardButton = document.getElementById("fillClipboard");
 const fillFromXmlButton = document.getElementById("fillFromXml");
 const printPageButton = document.getElementById("printPage");
 const saveAsImageButton = document.getElementById("saveAsImage");
+
+const copyInput = document.getElementById("copyInput");
+const copyFeedback = document.getElementById("copyFeedback");
 /////////////////////////////////////
 function parseJiraXML(xmlString) {
   const parser = new DOMParser();
@@ -85,6 +88,14 @@ fillClipboardButton.addEventListener("click", async () => {
     inputMarqueOld.value = data.old;
     inputMarqueNew.value = data.new;
 
+    copyInput.value = `${data.dateRDV}\t${data.dossierSuivi}\t${
+      data.vehiculeMarque
+    }\t${data.vehiculeModele}\t${data.glassTypeLabel}\t${
+      data.vehiculeImmatriculation
+    }\t${data.clientNom} ${data.clientPrenom}\t""\t${data.new}\t""\t${
+      data.montant
+    }\t""\t""\t${data.montant - data.montant * 0.1}`;
+
     await navigator.clipboard.writeText("");
   } catch (err) {
     alert("Clipboard read or JSON parse failed");
@@ -133,4 +144,23 @@ saveAsImageButton.addEventListener("click", () => {
     .catch((err) => {
       console.error("Failed to capture element:", err);
     });
+});
+
+// Copy to Clipboard with Feedback
+copyInput.addEventListener("click", async () => {
+  try {
+    await navigator.clipboard.writeText(copyInput.value);
+
+    // Add feedback styles
+    copyInput.classList.add("copied");
+    copyFeedback.classList.add("show");
+
+    // Remove feedback after 1.5s
+    setTimeout(() => {
+      copyInput.classList.remove("copied");
+      copyFeedback.classList.remove("show");
+    }, 1500);
+  } catch (err) {
+    console.error("Failed to copy text:", err);
+  }
 });
